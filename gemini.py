@@ -1,5 +1,8 @@
-from config import GEMINI_API_KEY
 import google.generativeai as genai
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 
 def post_process_text(text):
@@ -8,7 +11,7 @@ def post_process_text(text):
 
 
 def generate_custom_tech_questions(skills):
-    genai.configure(api_key=GEMINI_API_KEY)
+    genai.configure(api_key = os.getenv("GEMINI_API_KEY"))
     model = genai.GenerativeModel('gemini-pro')
     prompt = (f"""can you give me with 10 interview questions for freshers based on the mandatory skills mentioned 
     the job description as follows {skills} 
