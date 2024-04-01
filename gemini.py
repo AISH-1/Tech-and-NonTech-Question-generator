@@ -29,7 +29,7 @@ def generate_custom_tech_questions(skills):
 
 
 def generate_custom_non_tech_questions(resume_text, job_description_text):
-    genai.configure(api_key=GEMINI_API_KEY)
+    genai.configure(api_key = os.getenv("GEMINI_API_KEY"))
     model = genai.GenerativeModel('gemini-pro')
     prompt = (f"""Imagine you are conducting an interview with a candidate who has submitted a resume highlighting their 
               work experience and projects relevant to the position. Craft a set of questions that delve into their 
