@@ -2,3 +2,4 @@
 /venv
 /Web
 /__pycache__
+.env
